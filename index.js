@@ -6,13 +6,25 @@ function Timer(currentTime) {
 
     return {
         setTimeout: setTimeout
+        , clearTimeout: clearTimeout
         , now: now
         , advance: advance
     }
 
     function setTimeout(cb, offset) {
-        // console.log("pushing onto callbacks", callbacks)
-        callbacks.push([cb, currentTime + offset, counter++])
+        var id = counter++
+
+        callbacks.push([cb, currentTime + offset, id])
+
+        return id
+    }
+
+    function clearTimeout(id) {
+        var index = callbacks.map(function (triplet) {
+            return triplet[2]
+        }).indexOf(id)
+
+        callbacks.splice(index, 1)
     }
 
     function now() {
