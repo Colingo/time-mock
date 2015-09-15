@@ -1,6 +1,6 @@
 {
   "name": "time-mock",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Easily manipulate and mock out time in your tests",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
