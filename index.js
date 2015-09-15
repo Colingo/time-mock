@@ -2,7 +2,7 @@ module.exports = Timer
 
 function Timer(currentTime) {
     var callbacks = []
-    var counter = 0
+    var counter = 1
 
     return {
         setTimeout: setTimeout
